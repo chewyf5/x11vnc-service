@@ -4,4 +4,6 @@
 *.ori
 *.orig
 *.tmp
+# selber ;-)
+*~
 
