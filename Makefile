@@ -42,7 +42,7 @@ uninstall_autostart:
 
 uninstall_systemd:
 	rm -f $(SYSTEMD_FOLDER)$(SERVICE_FILE)
-        systemctl disable $(SERVICE_FILE) || true
-        systemctl daemon-reload
+	systemctl disable $(SERVICE_FILE) || true
+	systemctl daemon-reload
 
 
