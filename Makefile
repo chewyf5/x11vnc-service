@@ -35,12 +35,14 @@ help:
 	### Uninstall
 	# sudo make uninstall
 	#
+uninstall: uninstall_autostart uninstall_systemd
 
-uninstall:
+uninstall_autostart:
 	rm -f $(AUTOSTART_FOLDER)$(DESKTOP_FILE)
-	rm -f $(SYSTEMD_FOLDER)$(SERVICE_FILE)
-	systemctl disable $(SERVICE_FILE) || true
-	systemctl daemon-reload
 
+uninstall_systemd:
+	rm -f $(SYSTEMD_FOLDER)$(SERVICE_FILE)
+        systemctl disable $(SERVICE_FILE) || true
+        systemctl daemon-reload
 
 
